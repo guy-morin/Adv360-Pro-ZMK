@@ -27,6 +27,14 @@
           flavor = "tap-preferred";
           bindings = <&kp>, <&kp>;
       };
+      mo_tog: behavior_mo_tog {
+          compatible = "zmk,behavior-hold-tap";
+          label = "mo_tog";
+          #binding-cells = <2>;
+          flavor = "hold-preferred";
+          tapping-term-ms = <200>;
+          bindings = <&mo>, <&tog>;
+      };
       bspc_del: backspace_delete {
           compatible = "zmk,behavior-mod-morph";
           label = "BACKSPACE_DELETE";
@@ -34,6 +42,13 @@
           bindings = <&kp BACKSPACE>, <&kp DELETE>;
           mods = <(MOD_LSFT|MOD_RSFT)>;
           keep-mods = <(MOD_RSFT)>;
+      };
+      td_cap: tap_dance_cap {
+          compatible = "zmk,behavior-tap-dance";
+          label = "TAP_DANCE_CAP";
+          #binding-cells = <0>;
+          tapping-term-ms = <200>;
+          bindings = <&kp LSHFT>, <&caps_word>, <&kp CAPSLOCK>;
       };
       gresc: grave_escape {
           compatible = "zmk,behavior-mod-morph";
@@ -84,6 +99,21 @@
           bindings = <&kp COLON>, <&kp BACKSLASH>;
           mods = <(MOD_LSFT|MOD_RSFT)>;
         };
+      left_home: left_home {
+          compatible = "zmk,behavior-mod-morph";
+          label = "left_home";
+          #binding-cells = <0>;
+          bindings = <&kp LEFT>, <&kp HOME>;
+          mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+      right_end: right_end {
+          compatible = "zmk,behavior-mod-morph";
+          label = "right_end";
+          #binding-cells = <0>;
+          bindings = <&kp RIGHT>, <&kp END>;
+          mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
     };
 
   keymap {
@@ -91,11 +121,11 @@
 
     default_layer {
       bindings = <
-        &kp EQUAL &one    &two   &three   &kp N4     &kp N5 &tog KP                                                                       &mo MOD &kp N6 &kp N7 &kp N8    &kp N9   &kp N0   &kp MINUS
-        &kp TAB   &kp SQT   &comma_exclamation &dot_equal  &kp P &kp Y   &none                                                                        &none &kp F     &kp G     &kp C    &kp R &kp L &kp BSLH
-        &mt LCTRL ESC &kp A       &kp O     &kp E    &kp U &kp I  &none           &sk LSHFT &kp LALT             &kp LGUI  &kp RCTRL           &none &kp D     &kp H     &kp T    &kp N &kp S &kp SQT
-        &kp LSHFT &colon_backslash   &kp Q     &kp J    &kp K &kp X         &none    &none     &kp HOME &none &none &kp PG_UP &none     &none           &kp B     &kp M     &kp W    &kp V &kp Z &kp RSHFT
-        &mo FN     &kp GRAVE &mo FN &kp LALT &kp LGUI                &kp SPACE &mo FN   &kp END              &kp PG_DN &kp ENTER &bspc_del              &kp LEFT &kp RIGHT  &kp LBKT &kp RBKT &mo FN
+        &kp EQUAL &one    &two   &three   &kp LEFT_BRACKET     &kp LPAR &tog KP                                                                       &mo MOD &kp RPAR &kp RIGHT_BRACKET &kp STAR    &kp N9   &kp N0   &tog KP
+        &kp TAB   &kp SQT   &comma_exclamation &dot_equal  &kp P &kp Y   &kp LA(LC(N))                                                                        &kp LA(SPACE) &kp F     &kp G     &kp C    &kp R &kp L &kp BSLH
+        &mt LCTRL ESC &kp A       &kp O     &kp E    &kp U &kp I  &sk LSHFT           &sk LSHFT &kp LALT             &kp LGUI  &kp RCTRL           &kp LG(S) &kp D     &kp H     &kp T    &kp N &kp S &lt FN MINUS
+        &td_cap &colon_backslash   &kp Q     &kp J    &kp K &kp X         &none    &none     &kp HOME &none &none &kp PG_UP &none     &none           &kp B     &kp M     &kp W    &kp V &kp Z &td_cap
+        &mo KP     &kp GRAVE &kp LALT &mo_tog FN FN &kp LGUI                &kp SPACE &mo FN   &kp END              &kp PG_DN &kp ENTER &bspc_del              &left_home &right_end  &kp LBKT &kp RBKT &mo FN
       >;
     };
     qwerty_layer {
@@ -109,17 +139,17 @@
     };
     keypad {
       bindings = <
-        &kp EQUAL &kp N1    &kp N2   &kp N3   &kp N4     &kp N5 &trans                                                                       &mo MOD &kp N6 &kp KP_NUM &kp KP_EQUAL &kp KP_DIVIDE &kp KP_MULTIPLY &kp MINUS
-        &kp TAB   &kp Q     &kp W    &kp E    &kp R      &kp T  &none                                                                        &none &kp Y  &kp KP_N7  &kp KP_N8    &kp KP_N9     &kp KP_MINUS    &kp BSLH
-        &kp ESC   &kp A     &kp S    &kp D    &kp F      &kp G  &none           &kp LCTRL &kp LALT             &kp LGUI  &kp RCTRL           &none &kp H  &kp KP_N4  &kp KP_N5    &kp KP_N6     &kp KP_PLUS     &kp SQT
-        &kp LSHFT &kp Z     &kp X    &kp C    &kp V      &kp B         &none    &none     &kp HOME &none &none &kp PG_UP &none     &none           &kp N  &kp KP_N1  &kp KP_N2    &kp KP_N3     &kp KP_ENTER    &kp RSHFT
+        &kp LG(W) &kp N1    &kp N2   &kp N3   &kp N4     &kp N5 &trans                                                                       &mo MOD &kp DOLLAR &none &kp KP_EQUAL &kp KP_DIVIDE &kp KP_MULTIPLY &none
+        &kp TAB   &kp Q     &kp W    &kp E    &kp R      &kp T  &none                                                                        &none &kp KP_DIVIDE  &kp N7  &kp N8    &kp N9     &kp KP_MINUS    &kp BSLH
+        &kp ESC   &kp A     &kp S    &kp D    &kp F      &kp G  &none           &kp LCTRL &kp LALT             &kp LGUI  &kp RCTRL           &none &kp KP_MULTIPLY  &kp N4  &kp N5    &kp N6     &kp KP_PLUS     &kp SQT
+        &kp LSHFT &kp Z     &kp X    &kp C    &kp V      &kp B         &none    &none     &kp HOME &none &none &kp PG_UP &none     &none           &kp N0  &kp N1  &kp N2    &kp N3     &kp KP_ENTER    &kp RSHFT
         &mo FN     &kp GRAVE &kp CAPS &kp LEFT &kp RIGHT                &kp SPACE &kp ENTER   &kp END              &kp PG_DN &kp DEL &kp KP_N0              &kp UP     &kp DOWN     &kp KP_DOT    &kp RBKT        &mo FN
       >;
     };
     fn {
       bindings = <
-        &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &kp F6 &tog KP                                                       &mo 3 &kp F7 &kp F8 &kp F9 &kp F10 &kp F11 &kp F12
-        &trans  &kp PG_UP &kp LA(LEFT) &kp UP &kp LA(RIGHT) &trans &none                                                       &none &trans &trans &trans &trans  &trans  &trans
+        &kp LG(W) &kp F2 &kp F3 &kp F4 &kp F5 &kp F6 &tog KP                                                       &mo 3 &kp F7 &kp F8 &kp F9 &kp F10 &kp F11 &kp F12
+        &kp LG(TAB)  &kp PG_UP &kp LA(LEFT) &kp UP &kp LA(RIGHT) &trans &none                                                       &none &trans &trans &trans &trans  &kp LG(SLASH)  &trans
         &trans  &kp PG_DN &kp LEFT &kp DOWN &kp RIGHT &trans &none        &trans &trans             &trans &trans        &none &trans &trans &trans &trans  &trans  &trans
         &trans &kp LG(Z) &kp LG(X) &kp LG(C) &kp LG(V) &trans        &none  &none  &trans &none &none &trans &none  &none        &trans &trans &trans &trans  &trans  &trans
         &trans &trans &trans &trans &trans               &trans &trans &trans             &trans &trans &trans              &trans &trans &trans  &trans  &trans
