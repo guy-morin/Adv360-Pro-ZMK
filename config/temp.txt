@@ -1,0 +1,8 @@
+    sym_layer {
+      bindings = <
+        &kp SEMI &kp LESS_THAN    &kp GREATER_THAN   &kp QUESTION   &kp LS(LEFT_BRACKET)     &kp PERCENT &tog KP                                                                       &mo MOD &kp CARET &kp LS(RIGHT_BRACKET) &kp STAR    &kp N9   &kp N0   &tog KP
+        &kp LS(TAB)   &kp LS(SQT)   &kp EXCLAMATION &kp EQUAL  &kp LS(P) &kp LS(Y)   &kp LA(LC(N))                                                                        &kp LA(SPACE) &kp LESS_THAN     &kp LS(LEFT_BRACKET)     &kp LS(RIGHT_BRACKET)    &kp GREATER_THAN &kp PIPE &kp LS(BSLH)
+        &mt LCTRL ESC &kp LS(A)       &kp LS(O)     &kp LS(E)    &kp LS(U) &kp LS(I)  &sk LSHFT           &sk LSHFT &kp LALT             &kp LGUI  &kp RCTRL           &kp LG(S) &kp LEFT_BRACKET     &kp LPAR     &kp RPAR    &kp RIGHT_BRACKET &kp AMPERSAND &lt FN MINUS
+        &td_cap &kp BACKSLASH   &kp LS(Q)     &kp LS(J)    &kp LS(K) &kp LS(X)         &none    &none     &kp HOME &none &none &kp PG_UP &none     &none           &kp GRAVE     &kp TILDE     &kp HASH    &kp AT &kp SEMICOLON &td_cap
+        &mo KP     &kp GRAVE &kp LALT &mo_tog FN FN &kp LGUI                &kp SPACE &mo FN   &kp END              &kp PG_DN &kp ENTER &bspc_del              &kp PLUS &kp STAR  &kp SLASH &kp PERCENT &mo FN
+      >;
