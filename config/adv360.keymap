@@ -27,6 +27,63 @@
           flavor = "tap-preferred";
           bindings = <&kp>, <&kp>;
       };
+      bspc_del: backspace_delete {
+          compatible = "zmk,behavior-mod-morph";
+          label = "BACKSPACE_DELETE";
+          #binding-cells = <0>;
+          bindings = <&kp BACKSPACE>, <&kp DELETE>;
+          mods = <(MOD_LSFT|MOD_RSFT)>;
+          keep-mods = <(MOD_RSFT)>;
+      };
+      gresc: grave_escape {
+          compatible = "zmk,behavior-mod-morph";
+          label = "GRAVE_ESCAPE";
+          #binding-cells = <0>;
+          bindings = <&kp ESC>, <&kp GRAVE>;
+          mods = <(MOD_LGUI|MOD_LSFT|MOD_RGUI|MOD_RSFT)>;
+        };
+      one: one {
+          compatible = "zmk,behavior-mod-morph";
+          label = "one_lt";
+          #binding-cells = <0>;
+          bindings = <&kp N1>, <&kp LESS_THAN>;
+          mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+      two: two {
+          compatible = "zmk,behavior-mod-morph";
+          label = "two_gt";
+          #binding-cells = <0>;
+          bindings = <&kp N2>, <&kp GREATER_THAN>;
+          mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+      three: three {
+          compatible = "zmk,behavior-mod-morph";
+          label = "three_question";
+          #binding-cells = <0>;
+          bindings = <&kp N3>, <&kp QUESTION>;
+          mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+      comma_exclamation: comma_exclamation {
+          compatible = "zmk,behavior-mod-morph";
+          label = "comma_exclamation";
+          #binding-cells = <0>;
+          bindings = <&kp COMMA>, <&kp EXCLAMATION>;
+          mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+      dot_equal: dot_equal {
+          compatible = "zmk,behavior-mod-morph";
+          label = "dot_equal";
+          #binding-cells = <0>;
+          bindings = <&kp DOT>, <&kp KP_EQUAL>;
+          mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+      colon_backslash: colon_backslash {
+          compatible = "zmk,behavior-mod-morph";
+          label = "colon_backslash";
+          #binding-cells = <0>;
+          bindings = <&kp COLON>, <&kp BACKSLASH>;
+          mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
     };
 
   keymap {
@@ -34,11 +91,11 @@
 
     default_layer {
       bindings = <
-        &kp EQUAL &kp N1    &kp N2   &kp N3   &kp N4     &kp N5 &tog KP                                                                       &mo MOD &kp N6 &kp N7 &kp N8    &kp N9   &kp N0   &kp MINUS
-        &kp TAB   &kp SQT   &kp COMMA &kp DOT  &kp P &kp Y   &none                                                                        &none &kp F     &kp G     &kp C    &kp R &kp L &kp BSLH
-        &mt LCTRL ESC &kp A       &kp O     &kp E    &kp U &kp I  &none           &kp LCTRL &kp LALT             &kp LGUI  &kp RCTRL           &none &kp D     &kp H     &kp T    &kp N &kp S &kp SQT
-        &kp LSHFT &kp COLON   &kp Q     &kp J    &kp K &kp X         &none    &none     &kp HOME &none &none &kp PG_UP &none     &none           &kp B     &kp M     &kp W    &kp V &kp Z &kp RSHFT
-        &mo FN     &kp GRAVE &mo FN &kp LALT &kp LGUI                &kp SPACE &mo FN   &kp END              &kp PG_DN &kp ENTER &kp BSPC              &kp LEFT &kp RIGHT  &kp LBKT &kp RBKT &mo FN
+        &kp EQUAL &one    &two   &three   &kp N4     &kp N5 &tog KP                                                                       &mo MOD &kp N6 &kp N7 &kp N8    &kp N9   &kp N0   &kp MINUS
+        &kp TAB   &kp SQT   &comma_exclamation &dot_equal  &kp P &kp Y   &none                                                                        &none &kp F     &kp G     &kp C    &kp R &kp L &kp BSLH
+        &mt LCTRL ESC &kp A       &kp O     &kp E    &kp U &kp I  &none           &sk LSHFT &kp LALT             &kp LGUI  &kp RCTRL           &none &kp D     &kp H     &kp T    &kp N &kp S &kp SQT
+        &kp LSHFT &colon_backslash   &kp Q     &kp J    &kp K &kp X         &none    &none     &kp HOME &none &none &kp PG_UP &none     &none           &kp B     &kp M     &kp W    &kp V &kp Z &kp RSHFT
+        &mo FN     &kp GRAVE &mo FN &kp LALT &kp LGUI                &kp SPACE &mo FN   &kp END              &kp PG_DN &kp ENTER &bspc_del              &kp LEFT &kp RIGHT  &kp LBKT &kp RBKT &mo FN
       >;
     };
     qwerty_layer {
@@ -64,7 +121,7 @@
         &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &kp F6 &tog KP                                                       &mo 3 &kp F7 &kp F8 &kp F9 &kp F10 &kp F11 &kp F12
         &trans  &kp PG_UP &kp LA(LEFT) &kp UP &kp LA(RIGHT) &trans &none                                                       &none &trans &trans &trans &trans  &trans  &trans
         &trans  &kp PG_DN &kp LEFT &kp DOWN &kp RIGHT &trans &none        &trans &trans             &trans &trans        &none &trans &trans &trans &trans  &trans  &trans
-        &trans &trans &trans &trans &trans &trans        &none  &none  &trans &none &none &trans &none  &none        &trans &trans &trans &trans  &trans  &trans
+        &trans &kp LG(Z) &kp LG(X) &kp LG(C) &kp LG(V) &trans        &none  &none  &trans &none &none &trans &none  &none        &trans &trans &trans &trans  &trans  &trans
         &trans &trans &trans &trans &trans               &trans &trans &trans             &trans &trans &trans              &trans &trans &trans  &trans  &trans
       >;
     };
