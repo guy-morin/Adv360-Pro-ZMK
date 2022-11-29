@@ -10,8 +10,10 @@
 #define KP   2
 #define FN   3
 #define MOD   4
-#define OS   5
-#define CODE   6
+#define SHIFT   5
+#define OS   6
+#define CODE   7
+
 
 
 / {
@@ -48,7 +50,7 @@
           label = "TAP_DANCE_CAP";
           #binding-cells = <0>;
           tapping-term-ms = <200>;
-          bindings = <&kp LSHFT>, <&caps_word>, <&kp CAPSLOCK>;
+          bindings = <&mo SHIFT>, <&caps_word>, <&kp CAPSLOCK>;
       };
       gresc: grave_escape {
           compatible = "zmk,behavior-mod-morph";
@@ -121,8 +123,8 @@
 
     default_layer {
       bindings = <
-        &kp EQUAL &one    &two   &three   &kp LEFT_BRACKET     &kp LPAR &tog KP                                                                       &mo MOD &kp RPAR &kp RIGHT_BRACKET &kp STAR    &kp N9   &kp N0   &tog KP
-        &kp TAB   &kp SQT   &comma_exclamation &dot_equal  &kp P &kp Y   &kp LA(LC(N))                                                                        &kp LA(SPACE) &kp F     &kp G     &kp C    &kp R &kp L &kp BSLH
+        &none &one    &two   &three   &kp LEFT_BRACKET     &kp LPAR &tog KP                                                                       &mo MOD &kp RPAR &kp RIGHT_BRACKET &kp STAR    &kp DOLLAR   &kp N0   &tog KP
+        &kp TAB   &kp SQT   &comma_exclamation &dot_equal  &kp P &kp Y   &kp LA(LC(N))                                                                        &kp LA(SPACE) &kp F     &kp G     &kp C    &kp R &kp L &kp AMPERSAND
         &mt LCTRL ESC &kp A       &kp O     &kp E    &kp U &kp I  &sk LSHFT           &sk LSHFT &kp LALT             &kp LGUI  &kp RCTRL           &kp LG(S) &kp D     &kp H     &kp T    &kp N &kp S &lt FN MINUS
         &td_cap &colon_backslash   &kp Q     &kp J    &kp K &kp X         &none    &none     &kp HOME &none &none &kp PG_UP &none     &none           &kp B     &kp M     &kp W    &kp V &kp Z &td_cap
         &mo KP     &kp GRAVE &kp LALT &mo_tog FN FN &kp LGUI                &kp SPACE &mo FN   &kp END              &kp PG_DN &kp ENTER &bspc_del              &left_home &right_end  &kp LBKT &kp RBKT &mo FN
@@ -162,6 +164,15 @@
         &none &none        &none        &none        &none        &none        &rgb_ug RGB_MEFS_CMD 5                 &bt BT_CLR &bt BT_CLR             &bt BT_CLR &bt BT_CLR                 &rgb_ug RGB_MEFS_CMD 5 &none        &none        &none        &none        &none        &none
         &none &none        &none        &none        &none        &none                               &none           &none      &none      &none &none &none      &none      &none                                  &none        &none        &none        &none        &none        &none
         &none &none        &none        &bl BL_INC   &bl BL_DEC                                       &rgb_ug RGB_TOG &bl BL_TOG &none                  &none      &bl BL_TOG &rgb_ug RGB_TOG                                     &bl BL_INC   &bl BL_DEC   &none        &none        &none
+      >;
+    };
+    shift_layer {
+      bindings = <
+        &kp SEMI &kp LESS_THAN    &kp GREATER_THAN   &kp QUESTION   &kp LS(LEFT_BRACKET)     &kp PERCENT &tog KP                                                                       &mo MOD &kp CARET &kp LS(RIGHT_BRACKET) &kp STAR    &kp N9   &kp N0   &tog KP
+        &kp LS(TAB)   &kp LS(SQT)   &kp EXCLAMATION &kp EQUAL  &kp LS(P) &kp LS(Y)   &kp LA(LC(N))                                                                        &kp LA(SPACE) &kp LS(F)     &kp LS(G)     &kp LS(C)    &kp LS(R) &kp LS(L) &kp LS(BSLH)
+        &mt LCTRL ESC &kp LS(A)       &kp LS(O)     &kp LS(E)    &kp LS(U) &kp LS(I)  &sk LSHFT           &sk LSHFT &kp LALT             &kp LGUI  &kp RCTRL           &kp LG(S) &kp LS(D)     &kp LS(H)     &kp LS(T)    &kp LS(N) &kp LS(S) &lt FN MINUS
+        &td_cap &kp BACKSLASH   &kp LS(Q)     &kp LS(J)    &kp LS(K) &kp LS(X)         &none    &none     &kp HOME &none &none &kp PG_UP &none     &none           &kp LS(B)     &kp LS(M)     &kp LS(W)    &kp LS(V) &kp LS(Z) &td_cap
+        &mo KP     &kp GRAVE &kp LALT &mo_tog FN FN &kp LGUI                &kp SPACE &mo FN   &kp END              &kp PG_DN &kp ENTER &bspc_del              &left_home &right_end  &kp LBKT &kp RBKT &mo FN
       >;
     };
   };
