@@ -68,3 +68,11 @@
     tap-ms = <40>;
     bindings = <&kp LG(LEFT)>, <&kp LG(LS(RIGHT))>;
   };
+  macro_undir: macro_undir {
+    compatible = "zmk,behavior-macro";
+    label = "macro_undir";
+    #binding-cells = <0>;
+    wait-ms = <30>;
+    tap-ms = <40>;
+    bindings = <&kp DOT &kp DOT &kp SLASH>;
+  };
