@@ -73,6 +73,27 @@
           tapping-term-ms = <200>;
           bindings = <&mo KP>, <&tog KP>;
       };
+      td_s_par: tap_dance_s_par {
+          compatible = "zmk,behavior-tap-dance";
+          label = "TAP_DANCE_S_PAR";
+          #binding-cells = <0>;
+          tapping-term-ms = <200>;
+          bindings = <&kp LPAR>, <&kp RPAR>;
+      };
+      td_m_par: tap_dance_m_par {
+          compatible = "zmk,behavior-tap-dance";
+          label = "TAP_DANCE_M_PAR";
+          #binding-cells = <0>;
+          tapping-term-ms = <200>;
+          bindings = <&kp LEFT_BRACKET>, <&kp RIGHT_BRACKET>;
+      };
+      td_l_par: tap_dance_l_par {
+          compatible = "zmk,behavior-tap-dance";
+          label = "TAP_DANCE_L_PAR";
+          #binding-cells = <0>;
+          tapping-term-ms = <200>;
+          bindings = <&kp LS(LEFT_BRACKET)>, <&kp LS(RIGHT_BRACKET)>;
+      };
       gresc: grave_escape {
           compatible = "zmk,behavior-mod-morph";
           label = "GRAVE_ESCAPE";
@@ -156,11 +177,11 @@
 
     default_layer {
       bindings = <
-        &none &one    &two   &three   &kp LEFT_BRACKET     &kp LPAR &tog KP                                                                       &mo MOD &kp RPAR &kp RIGHT_BRACKET &kp STAR    &kp N0   &kp DOLLAR   &tog QWERTY
-        &kp TAB   &kp SQT   &comma_exclamation &dot_equal  &kp P &kp Y   &kp LA(LC(N))                                                                        &kp LA(SPACE) &kp F     &kp G     &kp C    &kp R &kp L &kp SLASH
-        &mt LCTRL ESC &kp A       &kp O     &kp E    &kp U &kp I  &sl SHIFT_LAYER           &sl SHIFT_LAYER &kp LA(LS(LGUI))             &kp LGUI  &kp RCTRL           &kp LG(S) &kp D     &kp H     &kp T    &kp N &kp S &lt FN MINUS
+        &kp LG(S) &kp N1    &kp N2   &kp N3   &kp LEFT_BRACKET     &kp LPAR &td_l_par                                                                       &mo MOD &kp RPAR &kp RIGHT_BRACKET &kp STAR    &kp N0   &kp DOLLAR   &tog QWERTY
+        &kp TAB   &kp SQT   &comma_exclamation &dot_equal  &kp P &kp Y   &td_m_par                                                                        &key_repeat &kp F     &kp G     &kp C    &kp R &kp L &kp SLASH
+        &mt LCTRL ESC &kp A       &kp O     &kp E    &kp U &kp I  &td_s_par           &sl SHIFT_LAYER &kp LA(LS(LGUI))             &kp LGUI  &kp RCTRL           &kp LG(S) &kp D     &kp H     &kp T    &kp N &kp S &lt FN MINUS
         &td_cap &colon_backslash   &kp Q     &kp J    &kp K &kp X         &none    &none     &kp LG(SPACE) &none &none &kp PG_UP &none     &none           &kp B     &kp M     &kp W    &kp V &kp Z &td_cap
-        &mo_tog KP KP     &kp GRAVE &kp LALT &kp LGUI &lt FN UNDER               &kp SPACE &mo SYMBOL_LAYER   &kp LA(SPACE)              &kp PG_DN &mo FN &kp BACKSPACE            &kp ENTER  &left_home &right_end  &caps_word &mo FN
+        &mo_tog KP KP     &kp GRAVE &kp LALT &kp LGUI &lt FN UNDER               &kp SPACE &mo SYMBOL_LAYER   &kp LA(SPACE)              &kp PG_DN &mo FN &kp BACKSPACE            &kp ENTER  &kp LEFT &kp END  &caps_word &mo FN
       >;
     };
       // not my keypad, just a placeholder
@@ -231,7 +252,7 @@
         &kp LS(TAB)   &kp LS(SQT)   &kp EXCLAMATION &kp EQUAL  &kp LS(P) &kp LS(Y)   &kp LA(LC(N))                                                                        &kp LA(SPACE) &kp LS(F)     &kp LS(G)     &kp LS(C)    &kp LS(R) &kp LS(L) &kp LS(BSLH)
         &mt LCTRL ESC &kp LS(A)       &kp LS(O)     &kp LS(E)    &kp LS(U) &kp LS(I)  &sk LSHFT           &sk LSHFT &kp LALT             &kp LGUI  &kp RCTRL           &kp LG(S) &kp LS(D)     &kp LS(H)     &kp LS(T)    &kp LS(N) &kp LS(S) &lt FN UNDER
         &td_cap &kp BACKSLASH   &kp LS(Q)     &kp LS(J)    &kp LS(K) &kp LS(X)         &none    &none     &kp HOME &none &none &kp PG_UP &none     &none           &kp LS(B)     &kp LS(M)     &kp LS(W)    &kp LS(V) &kp LS(Z) &td_cap
-        &mo KP     &kp LS(GRAVE) &kp LALT &mo_tog FN FN &kp LGUI                &kp SPACE &mo FN   &kp END              &kp PG_DN &kp ENTER &kp DELETE              &left_home &right_end  &kp LBKT &kp RBKT &mo FN
+        &mo KP     &kp LS(GRAVE) &kp LALT &mo_tog FN FN &kp LGUI                &kp SPACE &mo FN   &kp END              &kp PG_DN &kp ENTER &kp DELETE              &kp ENTER &kp HOME &kp END &kp RBKT &mo FN
       >;
     };
     sym_layer {
@@ -240,7 +261,7 @@
         &kp LS(TAB)   &kp LS(SQT)   &kp EXCLAMATION &kp EQUAL  &kp LS(P) &kp LS(Y)   &kp LA(LC(N))                                                                        &kp LA(SPACE) &kp LESS_THAN     &kp LS(LEFT_BRACKET)     &kp LS(RIGHT_BRACKET)    &kp GREATER_THAN &kp PIPE &kp LS(BSLH)
         &mt LCTRL ESC &kp LS(A)       &kp LS(O)     &kp LS(E)    &kp LS(U) &kp LS(I)  &sk LSHFT           &sk LSHFT &kp LALT             &kp LGUI  &kp RCTRL           &kp LG(S) &kp LEFT_BRACKET     &kp LPAR     &kp RPAR    &kp RIGHT_BRACKET &kp AMPERSAND &lt FN MINUS
         &td_cap &kp BACKSLASH   &kp LS(Q)     &kp LS(J)    &kp LS(K) &kp LS(X)         &none    &none     &kp HOME &none &none &kp PG_UP &none     &none           &kp GRAVE     &kp TILDE     &kp HASH    &kp AT &kp SEMICOLON &td_cap
-        &mo KP     &kp GRAVE &kp LALT &mo_tog FN FN &kp LGUI                &kp SPACE &mo FN   &kp END              &kp PG_DN &kp ENTER &bspc_del              &kp PLUS &kp STAR  &kp SLASH &kp PERCENT &mo FN
+        &mo KP     &kp GRAVE &kp LALT &mo_tog FN FN &kp LGUI                &kp SPACE &mo FN   &kp LA(LC(N))              &kp PG_DN &kp ENTER &bspc_del              &kp PLUS &kp STAR  &kp SLASH &kp PERCENT &mo FN
       >;
     };
   };
