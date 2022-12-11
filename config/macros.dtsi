@@ -76,3 +76,27 @@
     tap-ms = <40>;
     bindings = <&kp DOT &kp DOT &kp SLASH>;
   };
+  macro_main: macro_main {
+    compatible = "zmk,behavior-macro";
+    label = "macro_main";
+    #binding-cells = <0>;
+    wait-ms = <30>;
+    tap-ms = <10>;
+    bindings = <&kp I &kp F &kp SPACE &kp UNDER &kp UNDER &kp N &kp A &kp M &kp E &kp UNDER &kp UNDER &kp SPACE &kp EQUAL &kp EQUAL &kp SPACE &kp DQT &kp UNDER &kp UNDER &kp M &kp A &kp I &kp N &kp UNDER &kp UNDER &kp DQT &kp COLON &kp ENTER>;
+  };
+  macro_def: macro_def {
+    compatible = "zmk,behavior-macro";
+    label = "macro_def";
+    #binding-cells = <0>;
+    wait-ms = <30>;
+    tap-ms = <10>;
+    bindings = <&kp D &kp E &kp F &kp SPACE>;
+  };
+  macro_class: macro_class {
+    compatible = "zmk,behavior-macro";
+    label = "macro_class";
+    #binding-cells = <0>;
+    wait-ms = <30>;
+    tap-ms = <10>;
+    bindings = <&kp C &kp L &kp A &kp S &kp S &kp SPACE>;
+  };
