@@ -12,7 +12,7 @@
 #define QWERTY   4
 #define SHIFT_LAYER   5
 #define SYMBOL_LAYER   6
-#define OS   7
+#define GAME   7
 #define CODE   8
 
 
@@ -184,7 +184,7 @@
 
     default_layer {
       bindings = <
-        &kp LG(S) &kp N1    &kp N2   &kp N3   &kp LEFT_BRACKET     &kp LPAR &td_l_par                                                                       &mo MOD &kp RPAR &kp RIGHT_BRACKET &kp STAR    &kp N0   &kp DOLLAR   &tog QWERTY
+        &kp LG(S) &kp N1    &kp N2   &kp N3   &kp LEFT_BRACKET     &kp LPAR &td_l_par                                                                       &mo MOD &kp RPAR &kp RIGHT_BRACKET &kp STAR    &kp N0   &kp DOLLAR   &tog GAME
         &kp TAB   &kp SQT   &comma_exclamation &dot_equal  &kp P &kp Y   &td_m_par                                                                        &key_repeat &kp F     &kp G     &kp C    &kp R &kp L &kp SLASH
         &mt LCTRL ESC &kp A       &kp O     &kp E    &kp U &kp I  &td_s_par           &td_cp &kp LA(LS(LGUI))             &kp LGUI  &kp RCTRL           &kp LG(S) &kp D     &kp H     &kp T    &kp N &kp S &lt FN MINUS
         &sl SHIFT_LAYER &colon_backslash   &kp Q     &kp J    &kp K &kp X         &none    &none     &kp LG(SPACE) &none &none &kp PG_UP &none     &none           &kp B     &kp M     &kp W    &kp V &kp Z &sl SHIFT_LAYER
@@ -272,4 +272,13 @@
       >;
     };
   };
+    game_layer {
+      bindings = <
+        &kp EQUAL &kp N1    &kp N2   &kp N3   &kp N4     &kp N5 &tog KP                                                                       &mo MOD &kp N6 &kp N7 &kp N8    &kp N9   &kp N0   &tog GAME
+        &kp TAB   &none &kp Q     &kp W    &kp E    &kp R        &none                                                                        &none &kp Y  &kp U  &kp I     &kp O    &kp P    &kp BSLH
+        &kp ESC   &none &kp A     &kp S    &kp D    &kp F        &none           &kp LCTRL &kp LALT             &kp LGUI  &kp RCTRL           &none &kp H  &kp J  &kp K     &kp L    &kp SEMI &kp SQT
+        &kp LSHFT &none &kp Z     &kp X    &kp C    &kp V               &none    &none     &kp HOME &none &none &kp PG_UP &none     &none           &kp N  &kp M  &kp COMMA &kp DOT  &kp FSLH &kp RSHFT
+        &mo FN     &kp GRAVE &kp CAPS &kp LEFT &kp RIGHT                &kp SPACE &kp DEL   &kp END              &kp PG_DN &kp ENTER &kp BACKSPACE              &kp UP &kp DOWN  &kp LBKT &kp RBKT &mo FN
+      >;
+    };
 };
