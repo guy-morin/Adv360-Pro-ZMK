@@ -18,19 +18,19 @@
 
 
 / {
-    combos {
-        compatible = "zmk,combos";
-        // combo_save {
-        //     timeout-ms = <50>;
-        //     key-positions = <31 32>;
-        //     bindings = <&kp LG(S)>;
-        // };
-        combo_enter {
-            timeout-ms = <50>;
-            key-positions = <41 42>;
-            bindings = <&kp ENTER>;
-        };
-    };
+    // combos {
+    //     compatible = "zmk,combos";
+    //     // combo_save {
+    //     //     timeout-ms = <50>;
+    //     //     key-positions = <31 32>;
+    //     //     bindings = <&kp LG(S)>;
+    //     // };
+    //     combo_enter {
+    //         timeout-ms = <50>;
+    //         key-positions = <41 42>;
+    //         bindings = <&kp ENTER>;
+    //     };
+    // };
     behaviors {
       #include "macros.dtsi"
 
@@ -216,8 +216,8 @@
     fn {
       bindings = <
         &kp LG(W) &kp F2 &kp F3 &kp F4 &kp F5 &kp F6 &tog KP                                                       &mo 3 &macro_gmail &macro_psu &kp F9 &kp F10 &kp F11 &kp F12
-        &kp LG(TAB)  &kp PG_UP &kp LA(LEFT) &kp UP &kp LA(RIGHT) &macro_select_line &none                                                       &none &trans &trans &macro_class &trans  &kp LG(SLASH)  &trans
-        &trans  &kp PG_DN &kp LEFT &kp DOWN &kp RIGHT &macro_select_word &none        &trans &trans             &trans &trans        &none &macro_def &macro_parens &macro_brackets &macro_lbrackets  &trans  &trans
+        &kp LG(TAB)  &kp PG_UP &kp LA(LEFT) &kp UP &kp LA(RIGHT) &macro_select_line &kp LG(PLUS)                                                       &none &trans &trans &macro_class &trans  &kp LG(SLASH)  &trans
+        &trans  &kp PG_DN &kp LEFT &kp DOWN &kp RIGHT &macro_select_word &kp LG(MINUS)        &trans &trans             &trans &trans        &none &macro_def &macro_parens &macro_brackets &macro_lbrackets  &trans  &trans
         &trans &kp LG(Z) &kp LG(X) &kp LG(C) &kp LG(V) &trans        &none  &none  &trans &none &none &trans &none  &none        &trans &macro_main &macro_cancel_hints &trans  &macro_undir  &trans
         &trans &trans &trans &trans &trans               &trans &trans &trans             &trans &trans &trans              &trans &trans &trans  &trans  &trans
       >;
@@ -273,9 +273,9 @@
     };
     game_layer {
       bindings = <
-        &kp EQUAL &kp N1    &kp N2   &kp N3   &kp N4     &kp N5 &tog KP                                                                       &mo MOD &kp N6 &kp N7 &kp N8    &kp N9   &kp N0   &tog GAME_LAYER
+        &kp ESC &kp N1    &kp N2   &kp N3   &kp N4     &kp N5 &tog KP                                                                       &mo MOD &kp N6 &kp N7 &kp N8    &kp N9   &kp N0   &tog GAME_LAYER
         &kp TAB   &kp Q &kp Q     &kp W    &kp E    &kp R        &none                                                                        &none &kp Y  &kp U  &kp I     &kp O    &kp P    &kp BSLH
-        &kp ESC   &kp A &kp A     &kp S    &kp D    &kp F        &kp G           &kp LCTRL &kp LALT             &kp LGUI  &kp RCTRL           &none &kp H  &kp J  &kp K     &kp L    &kp SEMI &kp SQT
+        &kp LCTRL   &kp LCTRL &kp A     &kp S    &kp D    &kp F        &kp G           &kp LCTRL &kp LALT             &kp LGUI  &kp RCTRL           &none &kp H  &kp J  &kp K     &kp L    &kp SEMI &kp SQT
         &kp LSHFT &kp Z &kp Z     &kp X    &kp C    &kp V               &none    &none     &kp HOME &none &none &kp PG_UP &none     &none           &kp N  &kp M  &kp COMMA &kp DOT  &kp FSLH &kp RSHFT
         &mo FN     &kp GRAVE &kp CAPS &kp LEFT &kp RIGHT                &kp SPACE &kp DEL   &kp END              &kp PG_DN &kp ENTER &kp BACKSPACE              &kp UP &kp DOWN  &kp LBKT &kp RBKT &mo FN
       >;
