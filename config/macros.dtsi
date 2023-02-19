@@ -108,3 +108,27 @@
     tap-ms = <5>;
     bindings = <&kp LEFT &kp RIGHT>;
   };
+  vscode_terminal: vscode_terminal {
+    compatible = "zmk,behavior-macro";
+    label = "vscode_terminal";
+    #binding-cells = <0>;
+    wait-ms = <5>;
+    tap-ms = <5>;
+    bindings = <&kp LC(GRAVE)>;
+  };
+  vscode_win1: vscode_win1 {
+    compatible = "zmk,behavior-macro";
+    label = "vscode_win1";
+    #binding-cells = <0>;
+    wait-ms = <5>;
+    tap-ms = <5>;
+    bindings = <&kp LG(N1)>;
+  };
+  vscode_win2: vscode_win2 {
+    compatible = "zmk,behavior-macro";
+    label = "vscode_win2";
+    #binding-cells = <0>;
+    wait-ms = <5>;
+    tap-ms = <5>;
+    bindings = <&kp LG(N2)>;
+  };
