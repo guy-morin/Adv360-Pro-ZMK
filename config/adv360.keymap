@@ -226,7 +226,7 @@
     };
     fn {
       bindings = <
-        &kp LG(W) &kp F2 &kp F3 &kp F4 &kp F5 &kp F6 &tog KP                                                       &mo 3 &macro_gmail &macro_psu &kp F9 &kp F10 &kp F11 &kp F12
+        &kp LG(W) &kp F2 &kp F3 &kp F4 &kp F5 &kp F6 &tog KP                                                       &mo 3 &kp F7 &kp F8 &kp F9 &kp F10 &kp F11 &kp F12
         &kp LG(TAB)  &kp PG_UP &kp LA(LEFT) &kp UP &kp LA(RIGHT) &macro_select_line &kp LG(PLUS)                                                       &none &trans &trans &macro_class &trans  &kp LG(SLASH)  &trans
         &trans  &kp PG_DN &kp LEFT &kp DOWN &kp RIGHT &macro_select_word &kp LG(MINUS)        &trans &trans             &trans &trans        &none &macro_def &macro_parens &macro_brackets &macro_lbrackets  &trans  &trans
         &trans &kp LG(Z) &kp LG(X) &kp LG(C) &kp LG(V) &trans        &none  &none  &trans &none &none &trans &none  &none        &trans &macro_main &macro_cancel_hints &trans  &macro_undir  &trans
