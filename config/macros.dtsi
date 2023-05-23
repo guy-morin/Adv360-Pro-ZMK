@@ -34,24 +34,6 @@
     #binding-cells = <0>;
     bindings = <&kp LS(K)>, <&kp I>, <&kp N>, <&kp E>, <&kp S>, <&kp I>, <&kp S>;
   };
-  macro_gmail: macro_gmail {
-    compatible = "zmk,behavior-macro";
-    label = "macro_gmail";
-    #binding-cells = <0>; 
-    wait-ms = <15>;
-    tap-ms = <10>;
-    bindings = <&kp R &kp A &kp N &kp R &kp A &kp N &kp H &kp A &kp O &kp R &kp A &kp N &kp Z &kp H &kp A &kp N &kp G>, <&kp AT>, <&kp G>, <&kp M>, <&kp A>, <&kp I>, <&kp L>, <&kp DOT>, <&kp C>, <&kp O>, <&kp M>;
-  };
-  macro_psu: macro_psu {
-    compatible = "zmk,behavior-macro";
-    label = "macro_psu";
-    #binding-cells = <0>;
-    wait-ms = <15>;
-    tap-ms = <10>;
-    bindings = <&kp H &kp Z &kp Z &kp N5 &kp N3 &kp N6 &kp N1>
-    , <&kp AT>, <&kp P>, <&kp S>
-    , <&kp U>, <&kp DOT>, <&kp E>, <&kp D>, <&kp U>;
-  };
   macro_select_word: select_word {
     compatible = "zmk,behavior-macro";
     label = "macro_select_word";
