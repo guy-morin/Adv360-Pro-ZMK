@@ -67,104 +67,104 @@
           tapping-term-ms = <300>;
           bindings = <&kp LG(V)>, <&kp LG(C)>;
       };
-      td_cap: tap_dance_cap {
-          compatible = "zmk,behavior-tap-dance";
-          label = "TAP_DANCE_CAP";
-          #binding-cells = <0>;
-          tapping-term-ms = <200>;
-          bindings = <&mo SHIFT_LAYER>, <&caps_word>, <&kp CAPSLOCK>;
-      };
-      td_kp: tap_dance_kp {
-          compatible = "zmk,behavior-tap-dance";
-          label = "TAP_DANCE_KP";
-          #binding-cells = <0>;
-          tapping-term-ms = <200>;
-          bindings = <&mo KP>, <&tog KP>;
-      };
-      td_s_par: tap_dance_s_par {
-          compatible = "zmk,behavior-tap-dance";
-          label = "TAP_DANCE_S_PAR";
-          #binding-cells = <0>;
-          tapping-term-ms = <200>;
-          bindings = <&kp LPAR>, <&kp RPAR>;
-      };
-      td_m_par: tap_dance_m_par {
-          compatible = "zmk,behavior-tap-dance";
-          label = "TAP_DANCE_M_PAR";
-          #binding-cells = <0>;
-          tapping-term-ms = <200>;
-          bindings = <&kp LEFT_BRACKET>, <&kp RIGHT_BRACKET>;
-      };
-      td_l_par: tap_dance_l_par {
-          compatible = "zmk,behavior-tap-dance";
-          label = "TAP_DANCE_L_PAR";
-          #binding-cells = <0>;
-          tapping-term-ms = <200>;
-          bindings = <&kp LS(LEFT_BRACKET)>, <&kp LS(RIGHT_BRACKET)>;
-      };
-      gresc: grave_escape {
-          compatible = "zmk,behavior-mod-morph";
-          label = "GRAVE_ESCAPE";
-          #binding-cells = <0>;
-          bindings = <&kp ESC>, <&kp GRAVE>;
-          mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-      one: one {
-          compatible = "zmk,behavior-mod-morph";
-          label = "one_lt";
-          #binding-cells = <0>;
-          bindings = <&kp N1>, <&kp LESS_THAN>;
-          mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-      two: two {
-          compatible = "zmk,behavior-mod-morph";
-          label = "two_gt";
-          #binding-cells = <0>;
-          bindings = <&kp N2>, <&kp GREATER_THAN>;
-          mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-      three: three {
-          compatible = "zmk,behavior-mod-morph";
-          label = "three_question";
-          #binding-cells = <0>;
-          bindings = <&kp N3>, <&kp QUESTION>;
-          mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-      comma_exclamation: comma_exclamation {
-          compatible = "zmk,behavior-mod-morph";
-          label = "comma_exclamation";
-          #binding-cells = <0>;
-          bindings = <&kp COMMA>, <&kp EXCLAMATION>;
-          mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-      dot_equal: dot_equal {
-          compatible = "zmk,behavior-mod-morph";
-          label = "dot_equal";
-          #binding-cells = <0>;
-          bindings = <&kp DOT>, <&kp KP_EQUAL>;
-          mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-      colon_backslash: colon_backslash {
-          compatible = "zmk,behavior-mod-morph";
-          label = "colon_backslash";
-          #binding-cells = <0>;
-          bindings = <&kp COLON>, <&kp BACKSLASH>;
-          mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-      left_home: left_home {
-          compatible = "zmk,behavior-mod-morph";
-          label = "left_home";
-          #binding-cells = <0>;
-          bindings = <&kp LEFT>, <&kp HOME>;
-          mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-      right_end: right_end {
-          compatible = "zmk,behavior-mod-morph";
-          label = "right_end";
-          #binding-cells = <0>;
-          bindings = <&kp RIGHT>, <&kp END>;
-          mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
+//      td_cap: tap_dance_cap {
+//          compatible = "zmk,behavior-tap-dance";
+//          label = "TAP_DANCE_CAP";
+//          #binding-cells = <0>;
+//          tapping-term-ms = <200>;
+//          bindings = <&mo SHIFT_LAYER>, <&caps_word>, <&kp CAPSLOCK>;
+//      };
+//      td_kp: tap_dance_kp {
+//          compatible = "zmk,behavior-tap-dance";
+//          label = "TAP_DANCE_KP";
+//          #binding-cells = <0>;
+//          tapping-term-ms = <200>;
+//          bindings = <&mo KP>, <&tog KP>;
+//      };
+//      td_s_par: tap_dance_s_par {
+//          compatible = "zmk,behavior-tap-dance";
+//          label = "TAP_DANCE_S_PAR";
+//          #binding-cells = <0>;
+//          tapping-term-ms = <200>;
+//          bindings = <&kp LPAR>, <&kp RPAR>;
+//      };
+//      td_m_par: tap_dance_m_par {
+//          compatible = "zmk,behavior-tap-dance";
+//          label = "TAP_DANCE_M_PAR";
+//          #binding-cells = <0>;
+//          tapping-term-ms = <200>;
+//          bindings = <&kp LEFT_BRACKET>, <&kp RIGHT_BRACKET>;
+//      };
+//      td_l_par: tap_dance_l_par {
+//          compatible = "zmk,behavior-tap-dance";
+//          label = "TAP_DANCE_L_PAR";
+//          #binding-cells = <0>;
+//          tapping-term-ms = <200>;
+//          bindings = <&kp LS(LEFT_BRACKET)>, <&kp LS(RIGHT_BRACKET)>;
+//      };
+//      gresc: grave_escape {
+//          compatible = "zmk,behavior-mod-morph";
+//          label = "GRAVE_ESCAPE";
+//          #binding-cells = <0>;
+//          bindings = <&kp ESC>, <&kp GRAVE>;
+//          mods = <(MOD_LSFT|MOD_RSFT)>;
+//        };
+//      one: one {
+//          compatible = "zmk,behavior-mod-morph";
+//          label = "one_lt";
+//          #binding-cells = <0>;
+//          bindings = <&kp N1>, <&kp LESS_THAN>;
+//          mods = <(MOD_LSFT|MOD_RSFT)>;
+//        };
+//      two: two {
+//          compatible = "zmk,behavior-mod-morph";
+//          label = "two_gt";
+//          #binding-cells = <0>;
+//          bindings = <&kp N2>, <&kp GREATER_THAN>;
+//          mods = <(MOD_LSFT|MOD_RSFT)>;
+//        };
+//      three: three {
+//          compatible = "zmk,behavior-mod-morph";
+//          label = "three_question";
+//          #binding-cells = <0>;
+//          bindings = <&kp N3>, <&kp QUESTION>;
+//          mods = <(MOD_LSFT|MOD_RSFT)>;
+//        };
+//      comma_exclamation: comma_exclamation {
+//          compatible = "zmk,behavior-mod-morph";
+//          label = "comma_exclamation";
+//          #binding-cells = <0>;
+//          bindings = <&kp COMMA>, <&kp EXCLAMATION>;
+//          mods = <(MOD_LSFT|MOD_RSFT)>;
+//        };
+//      dot_equal: dot_equal {
+//          compatible = "zmk,behavior-mod-morph";
+//          label = "dot_equal";
+//          #binding-cells = <0>;
+//          bindings = <&kp DOT>, <&kp KP_EQUAL>;
+//          mods = <(MOD_LSFT|MOD_RSFT)>;
+//        };
+//      colon_backslash: colon_backslash {
+//          compatible = "zmk,behavior-mod-morph";
+//          label = "colon_backslash";
+//          #binding-cells = <0>;
+//          bindings = <&kp COLON>, <&kp BACKSLASH>;
+//          mods = <(MOD_LSFT|MOD_RSFT)>;
+//        };
+//      left_home: left_home {
+//          compatible = "zmk,behavior-mod-morph";
+//          label = "left_home";
+//          #binding-cells = <0>;
+//          bindings = <&kp LEFT>, <&kp HOME>;
+//          mods = <(MOD_LSFT|MOD_RSFT)>;
+//        };
+//      right_end: right_end {
+//          compatible = "zmk,behavior-mod-morph";
+//          label = "right_end";
+//          #binding-cells = <0>;
+//          bindings = <&kp RIGHT>, <&kp END>;
+//          mods = <(MOD_LSFT|MOD_RSFT)>;
+//        };
 
     };
 
@@ -200,7 +200,7 @@
         &kp TAB       &kp SQT   &kp COMMA &kp DOT   &kp P     &kp Y  &none                                                                   &none  &kp F   &kp G  &kp C    &kp R    &kp L    &kp SLASH
         &mt LCTRL ESC &kp A     &kp O     &kp E     &kp U     &kp I  &none &kp LCTRL &kp LALT                       &kp RGUI  &kp RCTRL      &none  &kp D   &kp H  &kp T    &kp N    &kp S    &kp BSLH
         &kp LSHIFT    &kp SEMI  &kp Q     &kp J     &kp K     &kp X        &none     &none     &kp HOME &none &none &kp PG_UP &none     &none       &kp B   &kp M  &kp W    &kp V    &kp Z    &kp RSHIFT
-        &mo 1         &kp GRAVE &mo 1     &kp LEFT  &kp RIGHT              &kp BSPC  &kp DEL   &kp END              &kp PG_DN &kp ENTER &kp SPACE           &kp UP &kp DOWN &kp LBKT &kp RBKT &mo 1
+        &mo FN        &kp GRAVE &mo 1     &kp LEFT  &kp RIGHT              &kp BSPC  &kp DEL   &kp END              &kp PG_DN &kp ENTER &kp SPACE           &kp UP &kp DOWN &kp LBKT &kp RBKT &mo FN
       >;  
     };
 
