@@ -196,24 +196,24 @@
 
     default_layer {
       bindings = <
-        &kp EQUAL     &kp N1    &kp N2     &kp N3    &kp N4    &kp N5 &mo 1                                                                   &mo 1  &kp N6  &kp N7 &kp N8   &kp N9   &kp N0   &kp MINUS
+        &kp EQUAL     &kp N1    &kp N2     &kp N3    &kp N4    &kp N5 &mo FN                                                                  &mo FN &kp N6  &kp N7 &kp N8   &kp N9   &kp N0   &kp MINUS
         &kp TAB       &kp SQT   &kp COMMA  &kp DOT   &kp P     &kp Y  &none                                                                   &none  &kp F   &kp G  &kp C    &kp R    &kp L    &kp SLASH
         &mt LCTRL ESC &kp A     &kp O      &kp E     &kp U     &kp I  &none &kp LCTRL &kp LALT                       &kp RGUI  &kp RCTRL      &none  &kp D   &kp H  &kp T    &kp N    &kp S    &kp BSLH
         &kp LSHIFT    &kp SEMI  &kp Q      &kp J     &kp K     &kp X        &none     &none     &kp HOME &none &none &kp PG_UP &none     &none       &kp B   &kp M  &kp W    &kp V    &kp Z    &kp RSHIFT
-        &mo 1         &kp GRAVE &bl BL_TOG &kp LEFT  &kp RIGHT              &kp BSPC  &kp DEL   &kp END              &kp PG_DN &kp ENTER &kp SPACE           &kp UP &kp DOWN &kp LBKT &kp RBKT &mo 1
+        &mo FN        &kp GRAVE &bl BL_TOG &kp LEFT  &kp RIGHT              &kp BSPC  &kp DEL   &kp END              &kp PG_DN &kp ENTER &kp SPACE           &kp UP &kp DOWN &kp LBKT &kp RBKT &mo FN
       >;  
     };
 
 
     FN {
       bindings = <
-        &trans        &kp F1    &kp F2     &kp F3    &kp F4    &kp F5 &mo 1                                                                    &mo 1  &kp F6  &kp F7 &kp F8  &kp F9   &kp F10  &trans
+        &trans        &kp F1    &kp F2     &kp F3    &kp F4    &kp F5 &mo FN                                                                   &mo FN &kp F6  &kp F7 &kp F8  &kp F9   &kp F10  &trans
         &kp PSCRN     &kp F11   &kp F12    &trans    &trans    &trans &none                                                                    &none  &trans  &trans &trans  &trans   &trans   &trans
         &bl BL_TOG    &trans    &trans     &trans    &trans    &trans &none &trans    &trans                         &trans   &trans           &none  &trans  &trans &trans  &trans   &trans   &trans
         &trans        &trans    &trans     &trans    &trans    &trans       &none     &none     &trans   &none &none &trans   &none       &none       &trans  &trans &trans  &trans   &trans   &trans
-        &mo 1         &trans    &trans     &trans    &trans                 &trans    &trans    &kp END              &trans   &trans      &trans              &trans &trans  &trans   ß&trans  &mo 1
-            >;
-        };
+        &mo FN        &trans    &trans     &trans    &trans                 &trans    &trans    &kp END              &trans   &trans      &trans              &trans &trans  &trans   ß&trans  &mo FN
+      >;
+    };
 
 
       // not my keypad, just a placeholder
